@@ -1,6 +1,9 @@
 import requests
 import pickle
 import joblib
+import streamlit as st
+import numpy as np
+from sklearn.metrics.pairwise import cosine_similarity
 
 def download_file(url, filename):
     r = requests.get(url)
@@ -133,3 +136,4 @@ if option == "Recommend Books":
                         st.write(f"Publisher: {publishers[index]}")
 
                         st.write(f"Rating: {ratings[index]:.2f}")
+
