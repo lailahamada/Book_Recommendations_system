@@ -12,7 +12,7 @@ The core idea behind the recommendation engine is to find users with similar rea
 
 | Filename                | Description                                     |
 |-------------------------|------------------------------------------------|
-| `KNN_model.pkl`         | Pre-trained KNN model for recommendations.     |
+| `KNN_model.pkl`         | KNN model for recommendations.     |
 | `book_names.pkl`        | List or dictionary of book titles.              |
 | `df_pivot.pkl`          | Pivot table data used in recommendation logic. |
 | `final_ratings.pkl`     | Dataset containing the final book ratings.      |
@@ -62,15 +62,6 @@ Make sure your `requirements.txt` includes at least:
 * Streamlit Cloud automatically sets up the environment based on `requirements.txt`.
 
 
-
-## Requirements
-
-Make sure your `requirements.txt` includes at least:
-
-* streamlit
-* scikit-learn
-* pandas
-* numpy
 
 
 
