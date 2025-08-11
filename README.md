@@ -30,29 +30,6 @@ Make sure your `requirements.txt` includes at least:
 * pandas
 * numpy
 
-## How to Run Locally
-
-1. Clone the repository:
-
-   ```bash
-   git clone <repository-url>
-   cd <project-folder>
-    ````
-
-2. Install the required dependencies:
-
-   ```bash
-   pip install -r requirements.txt
-   ```
-
-3. Run the Streamlit app:
-
-   ```bash
-   streamlit run app.py
-   ```
-
----
-
 ## Deployment
 
 ### Deploying on Streamlit Cloud
