@@ -2,8 +2,9 @@
 
 ## Overview
 
-This application is a Book Recommendation System implemented in Python with Streamlit. It employs a (KNN) approach constructed dynamically from user rating data to generate tailored book suggestions that match individual preferences.
+This project is a Book Recommendation System developed using Python and Streamlit. The system is designed to help users discover books tailored to their tastes by analyzing historical user ratings and preferences. It leverages collaborative filtering techniques, specifically a K-Nearest Neighbors (KNN) algorithm, to identify patterns in user behavior and recommend books that similar users have enjoyed.
 
+The core idea behind the recommendation engine is to find users with similar reading and rating habits, then suggest books that those similar users liked but the current user hasn’t read yet. The model builds a user-item matrix from the dataset, capturing users’ ratings for various books. Using this matrix, the KNN algorithm calculates similarity scores between users to find the closest neighbors.
 
 ---
 
@@ -20,6 +21,14 @@ This application is a Book Recommendation System implemented in Python with Stre
 | `requirements.txt`      | Python dependencies required to run the project.|
 
 ---
+## Requirements
+
+Make sure your `requirements.txt` includes at least:
+
+* streamlit
+* scikit-learn
+* pandas
+* numpy
 
 ## How to Run Locally
 
