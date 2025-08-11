@@ -1,6 +1,3 @@
-Sure! Here's the README fully in English, clean and ready to use:
-
-````markdown
 # Book Recommendation System
 
 ## Overview
