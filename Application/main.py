@@ -1,15 +1,36 @@
+import requests
 import pickle
-import streamlit as st
-import numpy as np
-from sklearn.metrics.pairwise import cosine_similarity
-
-# Load the required data
 import joblib
-model = joblib.load('C:/Users/hp/Downloads/System/KNN_model.pkl')
-books = pickle.load(open('C:/Users/hp/Downloads/System/book_names.pkl', 'rb'))
-final_ratings = pickle.load(open('C:/Users/hp/Downloads/System/final_ratings.pkl', 'rb'))
-df_pivot = pickle.load(open('C:/Users/hp/Downloads/System/df_pivot.pkl', 'rb'))
-popular_df = joblib.load('C:/Users/hp/Downloads/System/popular._df.pkl')
+
+def download_file(url, filename):
+    r = requests.get(url)
+    r.raise_for_status()  
+    with open(filename, 'wb') as f:
+        f.write(r.content)
+
+urls = {
+    'model': 'https://raw.githubusercontent.com/lailahamada/Book_Recommendations_system/main/Application/KNN_model.pkl',
+    'books': 'https://raw.githubusercontent.com/lailahamada/Book_Recommendations_system/main/Application/book_names.pkl',
+    'final_ratings': 'https://raw.githubusercontent.com/lailahamada/Book_Recommendations_system/main/Application/final_ratings.pkl',
+    'df_pivot': 'https://raw.githubusercontent.com/lailahamada/Book_Recommendations_system/main/Application/df_pivot.pkl',
+    'popular_df': 'https://raw.githubusercontent.com/lailahamada/Book_Recommendations_system/main/Application/popular._df.pkl',
+}
+
+for key, url in urls.items():
+    filename = url.split('/')[-1]
+    try:
+        with open(filename, 'rb') as f:
+            pass  
+    except FileNotFoundError:
+        print(f"Downloading {filename} ...")
+        download_file(url, filename)
+
+model = joblib.load('KNN_model.pkl')
+books = pickle.load(open('book_names.pkl', 'rb'))
+final_ratings = pickle.load(open('final_ratings.pkl', 'rb'))
+df_pivot = pickle.load(open('df_pivot.pkl', 'rb'))
+popular_df = joblib.load('popular._df.pkl')
+
 
 # Function to fetch poster URLs
 def fetch_poster(suggestion):
@@ -110,4 +131,5 @@ if option == "Recommend Books":
                         st.write(f"**{recommended_books[index]}**")
                         st.write(f"Author: {authors[index]}")
                         st.write(f"Publisher: {publishers[index]}")
+
                         st.write(f"Rating: {ratings[index]:.2f}")
