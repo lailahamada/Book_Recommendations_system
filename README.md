@@ -2,7 +2,8 @@
 
 ## Overview
 
-This project is a **Book Recommendation System** built using Python and Streamlit. It leverages a pre-trained KNN model to provide personalized book recommendations based on user ratings and preferences.
+This application is a Book Recommendation System implemented in Python with Streamlit. It employs a (KNN) approach constructed dynamically from user rating data to generate tailored book suggestions that match individual preferences.
+
 
 ---
 
