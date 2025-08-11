@@ -28,7 +28,7 @@ This application is a Book Recommendation System implemented in Python with Stre
    ```bash
    git clone <repository-url>
    cd <project-folder>
-````
+    ````
 
 2. Install the required dependencies:
 
